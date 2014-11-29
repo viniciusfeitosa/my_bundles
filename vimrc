@@ -253,6 +253,8 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
+let g:go_fmt_command = "goimports"
+
 " Rainbow
 let g:rainbow_active = 1
 

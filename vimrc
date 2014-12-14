@@ -270,3 +270,5 @@ let g:go_auto_type_info = 0
 
 " Disable scratch preview area
 set completeopt-=preview
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>

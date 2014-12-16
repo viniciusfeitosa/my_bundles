@@ -23,29 +23,35 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'burnettk/vim-angular'
+NeoBundle 'cespare/vim-toml'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'groenewege/vim-less'
 NeoBundle 'jstemmer/gotags.git'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'klen/python-mode'
+NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'oblitum/rainbow'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tfnico/vim-gradle'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/netrw.vim'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'mileszs/ack.vim'
-
-let g:AutoPairsFlyMode = 0
-let g:AutoPairsShortcutBackInsert = '<M-b>'
+NeoBundle 'jiangmiao/auto-pairs
 
 " Required:
 call neobundle#end()
@@ -104,7 +110,7 @@ au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-colorscheme solarized
+colorscheme Monokai
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -147,7 +153,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Display right column/gutter
-" set colorcolumn=120
+set colorcolumn=120
 
 " Automatically show matching brackets
 set showmatch
@@ -211,9 +217,6 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
-" Add mouse using in vim
-set mouse=a
-
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor=getpos(".")
@@ -253,8 +256,6 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
-let g:go_fmt_command = "goimports"
-
 " Rainbow
 let g:rainbow_active = 1
 
@@ -263,8 +264,38 @@ let g:netrw_liststyle = 3
 nnoremap <Leader><Leader> :TagbarOpen<CR><C-W>l<C-W>s:e .<CR><C-W>h:let g:netrw_chgwin=winnr()<CR><C-W>l
 
 " Tab/Spaces
-au FileType python setl sw=2 sts=2 et
+au FileType python setl sw=4 sts=4 et
 au FileType ruby setl sw=2 sts=2 et
+
+let g:go_auto_type_info = 0
+
+" Disable scratch preview area
+set completeopt-=preview
+
+" JavaScript
+let javascript_enable_domhtmlcss = 1
+let b:javascript_fold = 1
+let g:javascript_conceal = 1
+
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+" vim-go
+let g:go_play_open_browser = 1
+let g:go_fmt_fail_silently = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 let g:go_auto_type_info = 0
 

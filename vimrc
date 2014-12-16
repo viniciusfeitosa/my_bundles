@@ -51,7 +51,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/netrw.vim'
-NeoBundle 'jiangmiao/auto-pairs
+NeoBundle 'jiangmiao/auto-pairs'
 
 " Required:
 call neobundle#end()

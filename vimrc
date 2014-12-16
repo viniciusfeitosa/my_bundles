@@ -110,7 +110,8 @@ au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-colorscheme Monokai
+" colorscheme Monokai
+colorscheme Solarized 
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -134,6 +135,9 @@ let g:indent_guides_start_level=2
 
 " Enable ruler
 set ruler
+
+" Enable mouse
+set mouse=a
 
 " Set history size
 set history=100

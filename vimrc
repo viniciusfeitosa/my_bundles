@@ -52,6 +52,8 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/netrw.vim'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'chriskempson/tomorrow-theme'
+NeoBundle 'davidhalter/jedi-vim'
 
 " Required:
 call neobundle#end()
@@ -110,8 +112,10 @@ au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-" colorscheme Monokai
-colorscheme Solarized 
+"colorscheme Monokai
+"colorscheme Solarized 
+"colorscheme jellybeans 
+colorscheme tomorrow-night-bright
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>

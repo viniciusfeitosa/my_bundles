@@ -27,7 +27,6 @@ NeoBundle 'cespare/vim-toml'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'fatih/vim-go'
-NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'jstemmer/gotags.git'
@@ -112,9 +111,6 @@ au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-"colorscheme Monokai
-"colorscheme Solarized 
-"colorscheme jellybeans 
 colorscheme tomorrow-night-bright
 
 " Tagbar

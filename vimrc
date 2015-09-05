@@ -149,6 +149,9 @@ set gdefault
 " Highlight dynamically as pattern is typed
 set incsearch
 
+" Enable relative line numbers
+set relativenumber
+
 " Expand tabs to spaces
 set expandtab
 " Set tab size

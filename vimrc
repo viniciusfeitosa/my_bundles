@@ -12,13 +12,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
@@ -52,7 +53,11 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/netrw.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'chriskempson/tomorrow-theme'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'tell-k/vim-autopep8'
 
 " Required:
 call neobundle#end()
@@ -73,6 +78,8 @@ NeoBundleCheck
 
 " Disabling vim's startup message
 set shortmess=at
+
+let g:pymode_rope = 1
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -111,7 +118,8 @@ au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-colorscheme tomorrow-night-bright
+colorscheme Tomorrow-Night-Bright 
+" colorscheme distinguished
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -149,9 +157,6 @@ set gdefault
 " Highlight dynamically as pattern is typed
 set incsearch
 
-" Enable relative line numbers
-set relativenumber
-
 " Expand tabs to spaces
 set expandtab
 " Set tab size
@@ -170,6 +175,9 @@ set backspace=indent,eol,start
 
 " Disable old vi compatibility
 set nocompatible
+
+" Enable relative line numbers
+set relativenumber
 
 " Enhance command-line completion
 set wildmenu
@@ -291,6 +299,8 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+autocmd FileType python map <buffer> <c-f> :call Autopep8()<CR>
 
 " vim-go
 let g:go_play_open_browser = 1

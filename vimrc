@@ -312,6 +312,7 @@ let g:go_fmt_autosave = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:syntastic_go_checkers = ['golint', 'govet']
 
 " vim-godef
 let g:godef_split=2

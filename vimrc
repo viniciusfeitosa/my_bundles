@@ -10,56 +10,53 @@ call neobundle#begin(expand('$HOME/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'Shougo/neocomplete.vim', { 'rev' : 'ver.2.0' }
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'StanAngeloff/php.vim', { 'rev': '1.1' }
-NeoBundle 'airblade/vim-gitgutter', { 'rev': '339f8ba079' }
-" NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bling/vim-airline', { 'rev': 'v0.7' }
-NeoBundle 'burnettk/vim-angular', { 'rev': 'v2.0.0' }
-NeoBundle 'cespare/vim-toml', { 'rev': '190a55c2dd' }
-" NeoBundle 'derekwyatt/vim-scala', { 'rev': '71ada50fc5e' } 
-NeoBundle 'dgryski/vim-godef', { 'rev': '48952546203' }
-NeoBundle 'elzr/vim-json', { 'rev': 'f5e3181d0b33' }
-NeoBundle 'fatih/vim-go', { 'rev': 'v1.0.5' }
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'godlygeek/tabular', { 'rev': '60f25648814f' }
-NeoBundle 'groenewege/vim-less', { 'rev': '902870b38df' } 
-NeoBundle 'jstemmer/gotags', { 'rev': 'v1.3.0' }
-NeoBundle 'kien/ctrlp.vim', { 'rev': '1.79' }
-NeoBundle 'klen/python-mode', { 'rev': '0.8.1' }
-NeoBundle 'majutsushi/tagbar', { 'rev': 'v2.6.1' }
-NeoBundle 'maksimr/vim-jsbeautify', { 'rev': '1.0.1' }
-NeoBundle 'mustache/vim-mustache-handlebars', { 'rev': '291e49908a' }
-NeoBundle 'nanotech/jellybeans.vim', { 'rev': 'v1.5' }
-NeoBundle 'oblitum/rainbow', { 'rev': '7871d3e2350c' }
-NeoBundle 'saltstack/salt-vim'
-NeoBundle 'othree/html5.vim', { 'rev': '0.27' }
-NeoBundle 'pangloss/vim-javascript', { 'rev': 'v0.9.0' }
-NeoBundle 'rodjek/vim-puppet', { 'rev': 'd881b93dc4a8' }
-NeoBundle 'scrooloose/nerdcommenter', { 'rev': '2.3.0' }
-NeoBundle 'scrooloose/syntastic', { 'rev': 'v0.5.7' }
-" NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle 'terryma/vim-multiple-cursors', { 'rev': 'v2.2' }
-NeoBundle 'tfnico/vim-gradle', { 'rev': '8736039c977' }
-" NeoBundle 'tomasr/molokai', { 'rev': 'db8ce13b373' }
-NeoBundle 'tpope/vim-fugitive', { 'rev': 'v2.2' }
-NeoBundle 'tpope/vim-ragtag', { 'rev': 'v2.0' }
-NeoBundle 'tpope/vim-rails', { 'rev': 'v5.2' }
-NeoBundle 'tpope/vim-surround', { 'rev': 'v2.1' }
-NeoBundle 'vim-ruby/vim-ruby', { 'rev': 'vim7.4' }
-NeoBundle 'vim-scripts/netrw.vim', { 'rev': '142' }
-NeoBundle 'chriskempson/tomorrow-theme'
-NeoBundle 'tell-k/vim-autopep8'
-NeoBundle 'davidhalter/jedi-vim'
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'burnettk/vim-angular'
+NeoBundle 'cespare/vim-toml'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'jstemmer/gotags.git'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'klen/python-mode'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'oblitum/rainbow'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tfnico/vim-gradle'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/netrw.vim'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'chriskempson/tomorrow-theme'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'Lokaltog/vim-distinguished'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'tell-k/vim-autopep8'
+NeoBundle 'dgryski/vim-godef'
 
 " Required:
 call neobundle#end()
@@ -79,10 +76,9 @@ NeoBundleCheck
 " noautocmd qall!
 
 " Disabling vim's startup message
-set shortmess=at 
+set shortmess=at
 
-" Enable relative line numbers
-set relativenumber
+let g:pymode_rope = 1
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -92,20 +88,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 1
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -115,7 +97,7 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    return neocomplete#close_popup() . "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -125,23 +107,12 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 
-let g:neocomplete#enable_auto_select = 1
-
-" Go related mappings
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>b <Plug>(go-build)
-au FileType go nmap <Leader>t <Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def-tab)
 
 " Change default colorscheme
 set background=dark
-" colorscheme jellybeans 
-colorscheme Tomorrow-Night-Bright
-
-" Disable code folding
-set nofoldenable
+"colorscheme Tomorrow-Night-Bright 
+colorscheme gruvbox
+"colorscheme distinguished
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -165,69 +136,94 @@ let g:indent_guides_start_level=2
 
 " Enable ruler
 set ruler
+
+" Enable mouse
+set mouse=a
+
 " Set history size
 set history=100
+
 " Enable search highlighting
 set hlsearch
 " Add global search/replace as default
 set gdefault
 " Highlight dynamically as pattern is typed
 set incsearch
+
 " Expand tabs to spaces
 set expandtab
 " Set tab size
 set tabstop=4
 " Set expanded tab size
 set shiftwidth=4
+
 " Display right column/gutter
 set colorcolumn=120
-" Max syntax column 
-set synmaxcol=120
+
 " Automatically show matching brackets
 set showmatch
+
 " Backspace setup
 set backspace=indent,eol,start
+
 " Disable old vi compatibility
 set nocompatible
+
+" Enable relative line numbers
+set relativenumber
+
 " Enhance command-line completion
 set wildmenu
+
 " Allow cursor keys in insert mode
 set esckeys
+
 " Optimize for fast terminal connections
 set ttyfast
+
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
+
 " Don't add empty newline at EOL
 set binary
 set noeol
+
 " Use F2 to toggle pastemode and avoid breaking pasted content
 set pastetoggle=<F2>
+
 " Respect modeline in files
 set modeline
 set modelines=4
+
 " Enable line numbers
 set number
+
 " Highlight current line
 set cursorline
+
 " Always show status line
 set laststatus=2
+
 " Disable error bells
 set noerrorbells
+
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
+
 " Don’t show the intro message when starting Vim
 set shortmess=atI
+
 " Show the current mode
 set showmode
+
 " Show the filename in the window titlebar
 set title
+
 " Show the (partial) command as it’s being typed
 set showcmd
+
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
-" Disable scratch preview area
-set completeopt-=preview
-set mouse=a
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -277,16 +273,12 @@ nnoremap <Leader><Leader> :TagbarOpen<CR><C-W>l<C-W>s:e .<CR><C-W>h:let g:netrw_
 
 " Tab/Spaces
 au FileType python setl sw=4 sts=4 et
-au FileType php setl sw=4 sts=4 et
-au FileType javascript setl sw=4 sts=4 et
 au FileType ruby setl sw=2 sts=2 et
-au FileType css setl sw=2 sts=2 et
-au FileType xml setl sw=2 sts=2 et
-au FileType html setl sw=2 sts=2 et
-au FileType sls setl sw=2 sts=2 et
 
-" Map extensions
-au BufRead,BufNewFile *.jinja set filetype=sls
+let g:go_auto_type_info = 0
+
+" Disable scratch preview area
+set completeopt-=preview
 
 " JavaScript
 let javascript_enable_domhtmlcss = 1
@@ -304,7 +296,6 @@ autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 autocmd FileType python map <buffer> <c-f> :call Autopep8()<CR>
 
 " vim-go
-let g:go_auto_type_info = 0
 let g:go_play_open_browser = 1
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = "goimports"
@@ -312,9 +303,19 @@ let g:go_fmt_autosave = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:syntastic_go_checkers = ['golint', 'govet']
+
+" Go related mappings
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+
 
 " vim-godef
 let g:godef_split=2
@@ -322,5 +323,9 @@ let g:godef_split=2
 " vim-json
 let g:vim_json_syntax_conceal = 0
 
-" vim-gitgutter
-let g:gitgutter_max_signs = 5000
+let g:go_auto_type_info = 0
+
+" Disable scratch preview area
+set completeopt-=preview
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>

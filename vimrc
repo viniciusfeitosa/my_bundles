@@ -57,6 +57,8 @@ NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tell-k/vim-autopep8'
 NeoBundle 'dgryski/vim-godef'
+NeoBundle 'mhinz/vim-janah'
+NeoBundle 'mkarmona/colorsbox'
 
 " Required:
 call neobundle#end()
@@ -111,8 +113,10 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Change default colorscheme
 set background=dark
 "colorscheme Tomorrow-Night-Bright 
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme distinguished
+"colorscheme janah 
+colorscheme colorsbox-material
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>

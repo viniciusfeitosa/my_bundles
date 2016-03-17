@@ -51,7 +51,6 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/netrw.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'chriskempson/tomorrow-theme'
-NeoBundle 'morhetz/gruvbox'
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'davidhalter/jedi-vim'
@@ -59,6 +58,13 @@ NeoBundle 'tell-k/vim-autopep8'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'mhinz/vim-janah'
 NeoBundle 'mkarmona/colorsbox'
+NeoBundle 'jdkanani/vim-material-theme'
+NeoBundle 'Lokaltog/vim-distinguished'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'jscappini/material.vim'
+NeoBundle 'wesQ3/wombat.vim'
+NeoBundle 'joshdick/onedark.vim'
+NeoBundle 'marcopaganini/termschool-vim-theme'
 
 " Required:
 call neobundle#end()
@@ -111,12 +117,15 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 
 " Change default colorscheme
+syntax enable
 set background=dark
-"colorscheme Tomorrow-Night-Bright 
-"colorscheme gruvbox
+"colorscheme Tomorrow-Night-Bright
 "colorscheme distinguished
 "colorscheme janah 
-colorscheme colorsbox-material
+"colorscheme colorsbox-material
+"colorscheme solarized
+"colorscheme onedark
+colorscheme termschool
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>

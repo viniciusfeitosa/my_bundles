@@ -22,17 +22,12 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'burnettk/vim-angular'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'groenewege/vim-less'
 NeoBundle 'jstemmer/gotags.git'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'klen/python-mode'
-NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -47,24 +42,11 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vim-scripts/netrw.vim'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'chriskempson/tomorrow-theme'
-NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tell-k/vim-autopep8'
 NeoBundle 'dgryski/vim-godef'
-NeoBundle 'mhinz/vim-janah'
 NeoBundle 'mkarmona/colorsbox'
-NeoBundle 'jdkanani/vim-material-theme'
-NeoBundle 'Lokaltog/vim-distinguished'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'jscappini/material.vim'
-NeoBundle 'wesQ3/wombat.vim'
-NeoBundle 'joshdick/onedark.vim'
-NeoBundle 'marcopaganini/termschool-vim-theme'
 
 " Required:
 call neobundle#end()
@@ -119,13 +101,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Change default colorscheme
 syntax enable
 set background=dark
-"colorscheme Tomorrow-Night-Bright
-"colorscheme distinguished
-"colorscheme janah 
-"colorscheme colorsbox-material
-"colorscheme solarized
-"colorscheme onedark
-colorscheme termschool
+colorscheme jellybeans
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -149,83 +125,60 @@ let g:indent_guides_start_level=2
 
 " Enable ruler
 set ruler
-
 " Enable mouse
 set mouse=a
-
 " Set history size
 set history=100
-
 " Enable search highlighting
 set hlsearch
 " Add global search/replace as default
 set gdefault
 " Highlight dynamically as pattern is typed
 set incsearch
-
 " Expand tabs to spaces
 set expandtab
 " Set tab size
 set tabstop=4
 " Set expanded tab size
 set shiftwidth=4
-
 " Display right column/gutter
 set colorcolumn=120
-
 " Automatically show matching brackets
 set showmatch
-
 " Backspace setup
 set backspace=indent,eol,start
-
 " Disable old vi compatibility
 set nocompatible
-
 " Enable relative line numbers
 set relativenumber
-
 " Enhance command-line completion
 set wildmenu
-
 " Allow cursor keys in insert mode
 set esckeys
-
 " Optimize for fast terminal connections
 set ttyfast
-
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
-
 " Don't add empty newline at EOL
 set binary
 set noeol
-
 " Use F2 to toggle pastemode and avoid breaking pasted content
 set pastetoggle=<F2>
-
 " Respect modeline in files
 set modeline
 set modelines=4
-
 " Enable line numbers
 set number
-
 " Highlight current line
 set cursorline
-
 " Always show status line
 set laststatus=2
-
 " Disable error bells
 set noerrorbells
-
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
-
 " Don’t show the intro message when starting Vim
 set shortmess=atI
-
 " Show the current mode
 set showmode
 

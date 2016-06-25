@@ -47,6 +47,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tell-k/vim-autopep8'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'mkarmona/colorsbox'
+NeoBundle 'jmcantrell/vim-virtualenv'
 
 " Required:
 call neobundle#end()

@@ -1,5 +1,5 @@
 # Installing 
-1) Install NeoBundle
+1) Install [NeoBundle](https://github.com/Shougo/neobundle.vim)
 
 2) Rename vimrc to .vimrc
 

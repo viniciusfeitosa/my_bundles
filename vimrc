@@ -8,7 +8,7 @@ endif
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
 let g:vim_bootstrap_langs = "c,go,html,javascript,lisp,lua,php,python,ruby"
-let g:vim_bootstrap_editor = "vim"				" nvim or vim
+let g:vim_bootstrap_editor = "vim"              " nvim or vim
 
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."
@@ -66,7 +66,11 @@ endif
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'morhetz/gruvbox'
+Plug 'jacoborus/tender'
+
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 "" ack
 Plug 'mileszs/ack.vim'
@@ -117,6 +121,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
+Plug 'jmcantrell/vim-virtualenv'
 
 
 " ruby
@@ -194,9 +199,10 @@ syntax on
 set ruler
 set number
 
+set background=dark
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme gruvbox
+  colorscheme tender
 endif
 
 set mousemodel=popup
@@ -257,7 +263,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'tender'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -653,4 +659,3 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
-

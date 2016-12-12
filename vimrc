@@ -443,6 +443,7 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|gi
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
 let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50,results:50'
 
 " The Silver Searcher
 if executable('ag')

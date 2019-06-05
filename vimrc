@@ -442,7 +442,7 @@ if executable('rg')
       \         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \ <bang>0)
 
-    noremap <C-f> :Find<CR>
+    noremap <leader>F :Find<CR>
 endif
 
 noremap <leader>glo :Commits<CR>
@@ -519,6 +519,11 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+
+" Use system clipboard
+" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
+set clipboard+=unnamed
 
 "*****************************************************************************
 "" Custom configs

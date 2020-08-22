@@ -49,6 +49,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-abolish'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -73,6 +74,9 @@ if v:version >= 704
   "" Snippets
   Plug 'SirVer/ultisnips'
 endif
+
+" ale
+let g:ale_linters = {}
 
 Plug 'honza/vim-snippets'
 
@@ -220,6 +224,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
+  set background=dark    " Setting dark mode"
   colorscheme gruvbox
 endif
 
@@ -244,7 +249,7 @@ else
   let g:indentLine_leadingSpaceEnabled = 1
   let g:indentLine_faster = 1
 
-  
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -252,7 +257,7 @@ else
       set term=xterm-256color
     endif
   endif
-  
+
 endif
 
 
@@ -535,7 +540,6 @@ set clipboard+=unnamed
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
-
 " go
 " vim-go
 " run :GoBuild or :GoTestCompile based on the go file
@@ -550,9 +554,7 @@ endfunction
 
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
-let g:syntastic_go_checkers = ['golint', 'govet']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" let g:go_fmt_fail_silently = 1
 
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -566,6 +568,7 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
+let g:go_metalinter_autosave_enabled=['vet', 'golint', 'errcheck']
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -601,6 +604,9 @@ augroup go
 
 augroup END
 
+" ale
+:call extend(g:ale_linters, {
+    \"go": ['golint', 'go vet'], })
 
 " html
 " for html files, 2 spaces

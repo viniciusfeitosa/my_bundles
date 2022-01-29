@@ -50,6 +50,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'morhetz/gruvbox'
+Plug 'neomake/neomake'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -94,6 +95,7 @@ Plug 'ludwig/split-manpage.vim'
 
 " go
 "" Go Lang Bundle
+Plug 'hexdigest/gounit-vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 
@@ -124,6 +126,7 @@ Plug 'xolox/vim-lua-inspect'
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
+Plug 'Integralist/vim-mypy'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
@@ -426,7 +429,7 @@ endif
 if executable('rg')
     let g:rg_command = '
       \ rg --column --line-number --no-heading --fixed-strings --hidden --follow --color "never"
-      \ -g "*.{js,json,php,md,styl,jade,html,config,groovy,py,cpp,c,go,hs,rb,conf,rss,xml,yml,yaml}"
+      \ -g "*.{js,json,php,md,styl,jade,html,config,groovy,py,cpp,c,go,hs,rb,conf,rss,xml,yml,yaml,hcl,tf}"
       \ -g "Dockerfile*"
       \ -g "!{.git,node_modules,vendor}/*"
       \ -g "!*{.pyc}" '
@@ -610,7 +613,7 @@ augroup END
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=120
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -628,7 +631,21 @@ let g:jedi#smart_auto_mappings = 0
 
 " ale
 :call extend(g:ale_linters, {
-    \'python': ['flake8'], })
+    \'python': ['flake8', 'mypy'], })
+
+" Neomake
+" Run Neomake when opening/saving buffers
+" https://www.gregjs.com/vim/2015/linting-code-with-neomake-and-neovim/
+autocmd! BufWritePost,BufEnter * Neomake
+" Automatically open the warning list when the file has at least one
+let g:neomake_open_list = 2
+
+" Configure processors
+let g:neomake_python_flake8_maker = {
+    \ 'args': ['--max-line-length=120', '--max-complexity=10'],
+    \ }
+" Activate Python processors
+let g:neomake_python_enabled_makers = ['flake8', 'mypy']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
